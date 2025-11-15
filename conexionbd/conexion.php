@@ -6,7 +6,6 @@ class Conexion {
     private $options;
     private $conexion;
 
-
     public function __construct(
         string $host = "localhost",
         string $dbname = "AgricolaD_bd",
@@ -16,8 +15,13 @@ class Conexion {
         $this->dsn = "mysql:host={$host};dbname={$dbname};charset=utf8mb4";
         $this->username = $username;
         $this->password = $password;
+        
+        $this->options = [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES => false
+        ];
     }
-
 
     public function iniciar(): ?PDO {
         try {
@@ -31,7 +35,7 @@ class Conexion {
             }
             return $this->conexion;
         } catch (PDOException $e) {
-            throw new Exception("Error en la conexión a la base de datos: " . $e->getMessage());
+            die("Error en la conexión a la base de datos: " . $e->getMessage());
         }
     }
 

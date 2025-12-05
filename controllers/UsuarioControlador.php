@@ -12,20 +12,20 @@ class UsuarioControlador {
     }
 
     public function crear() {
-        $usuarioModel  = new Usuario();
-        $clienteModel  = new Cliente();
-        $clientes      = $clienteModel->obtenerTodos();
+        $usuarioModel = new Usuario();
+        $clienteModel = new Cliente();
+        $clientes     = $clienteModel->obtenerTodos();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $claveHash = password_hash($_POST['clave'], PASSWORD_DEFAULT);
 
             $data = [
-                'nombre'            => $_POST['nombre'],
-                'correo'            => $_POST['correo'],
-                'clave'             => $claveHash,
-                'rol'               => $_POST['rol'],
-                'Cliente_idCliente' => $_POST['Cliente_idCliente'],
+                'nombre'           => $_POST['nombre'],
+                'correo'           => $_POST['correo'],
+                'clave'            => $claveHash,
+                'rol'              => $_POST['rol'],
+                'Cliente_idCliente'=> $_POST['Cliente_idCliente'],
             ];
 
             $usuarioModel->crear($data);
@@ -50,27 +50,28 @@ class UsuarioControlador {
             exit;
         }
 
+        // Petición desde el modal (POST): solo actualiza y termina
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $data = [
-                'nombre'            => $_POST['nombre'],
-                'correo'            => $_POST['correo'],
-                'rol'               => $_POST['rol'],
-                'Cliente_idCliente' => $_POST['Cliente_idCliente'],
+                'nombre'           => $_POST['nombre'],
+                'correo'           => $_POST['correo'],
+                'rol'              => $_POST['rol'],
+                'Cliente_idCliente'=> $_POST['Cliente_idCliente'],
             ];
 
             $usuarioModel->actualizar($id, $data);
 
-            // Si cambia clave
             if (!empty($_POST['clave'])) {
                 $claveHash = password_hash($_POST['clave'], PASSWORD_DEFAULT);
                 $usuarioModel->actualizarClave($id, $claveHash);
             }
 
-            header('Location: UsuarioControlador.php?accion=listar');
+            // Sin redirección: el fetch recibe 200 y el JS hace location.reload()
             exit;
         }
 
+        // Petición GET normal: mostrar form de edición tradicional
         $usuario = $usuarioModel->obtenerPorId($id);
         require __DIR__ . '/../views/usuario/form.php';
     }
@@ -93,9 +94,9 @@ $accion = $_GET['accion'] ?? 'listar';
 $controlador = new UsuarioControlador();
 
 switch ($accion) {
-    case 'listar':  $controlador->listar();  break;
-    case 'crear':   $controlador->crear();   break;
-    case 'editar':  $controlador->editar();  break;
-    case 'eliminar':$controlador->eliminar();break;
-    default:        $controlador->listar();  break;
+    case 'listar':   $controlador->listar();   break;
+    case 'crear':    $controlador->crear();    break;
+    case 'editar':   $controlador->editar();   break;
+    case 'eliminar': $controlador->eliminar(); break;
+    default:         $controlador->listar();   break;
 }

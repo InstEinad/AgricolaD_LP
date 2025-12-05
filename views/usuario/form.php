@@ -20,7 +20,7 @@ $rol         = $usuario['rol']             ?? '';
 $idCliente   = $usuario['Cliente_idCliente'] ?? '';
 ?>
 
-<form method="post" action="../../controllers/UsuarioControlador.php?accion=<?= $usuario ? 'editar&id='.$idUsuario : 'crear' ?>">
+<form method="post" action="/AGRICOLAD_LP/controllers/UsuarioControlador.php?accion=<?= $usuario ? 'editar&id='.$idUsuario : 'crear' ?>">
 
     <label>Nombre:</label><br>
     <input type="text" name="nombre" value="<?= htmlspecialchars($nombre) ?>" required><br><br>

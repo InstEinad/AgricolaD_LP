@@ -1,0 +1,57 @@
+/* Fondo oscuro y centrado */
+.modal {
+  display: none;                /* oculto al iniciar */
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor blanco */
+.modal-content {
+  background: #ffffff;
+  padding: 20px 24px;
+  border-radius: 8px;
+  min-width: 320px;
+  max-width: 480px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Cabecera */
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+/* Botón cerrar */
+.close {
+  float: right;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Formulario en columna */
+#formEditarCliente {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#formEditarCliente label {
+  font-weight: bold;
+}
+
+#formEditarCliente input[type="text"],
+#formEditarCliente input[type="email"] {
+  width: 100%;
+  padding: 6px 8px;
+  box-sizing: border-box;
+}
+
+#formEditarCliente button {
+  margin-top: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+}

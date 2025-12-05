@@ -36,7 +36,9 @@ $baseUrlCliente = '/agri/AgricolaD_LP/controllers/ClienteControlador.php';
         <input type="email" name="correo" value="<?= htmlspecialchars($correo) ?>" required><br><br>
 
         <button type="submit">Guardar</button>
-        <a href="../../controllers/ClienteControlador.php?accion=listar">Cancelar</a>
+        <a href="/AGRICOLAD_LP/login/bienvenido.html">
+            <button type="button">Volver</button>
+        </a>
 
     </form>
 

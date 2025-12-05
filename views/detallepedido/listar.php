@@ -11,7 +11,7 @@ $baseUrlDetalle = '/agri/AgricolaD_LP/controllers/DetallePedidoControlador.php';
 <body>
     <h1>Listado de Detalles de Pedido</h1>
 
-    <a href="<?= $baseUrlDetalle ?>?accion=crear">Nuevo Detalle</a>
+    <a href="../../controllers/DetallePedidoControlador.php?accion=crear">Nuevo Detalle</a>
     <br><br>
 
     <table border="1" cellpadding="5">
@@ -37,8 +37,8 @@ $baseUrlDetalle = '/agri/AgricolaD_LP/controllers/DetallePedidoControlador.php';
                     <td><?= htmlspecialchars($d['Producto_idProducto']) ?></td>
                     <td><?= htmlspecialchars($d['Pedido_idPedido']) ?></td>
                     <td>
-                        <a href="<?= $baseUrlDetalle ?>?accion=editar&id=<?= $d['idDetallePedido'] ?>">Editar</a> |
-                        <a href="<?= $baseUrlDetalle ?>?accion=eliminar&id=<?= $d['idDetallePedido'] ?>"
+                        <a href="../../controllers/DetallePedidoControlador.php?accion=editar&id=<?= $d['idDetallePedido'] ?>">Editar</a> |
+                        <a href="../../controllers/DetallePedidoControlador.php?accion=eliminar&id=<?= $d['idDetallePedido'] ?>">Eliminar</a>
                            onclick="return confirm('¿Seguro de eliminar este detalle de pedido?');">
                             Eliminar
                         </a>

@@ -11,7 +11,7 @@ $baseUrlCliente = '/agri/AgricolaD_LP/controllers/ClienteControlador.php';
 <body>
     <h1>Listado de Clientes</h1>
 
-    <a href="<?= $baseUrlCliente ?>?accion=crear">Nuevo Cliente</a>
+    <a href="../../controllers/ClienteControlador.php?accion=crear">Nuevo Cliente</a>
     <br><br>
 
     <table border="1" cellpadding="5">
@@ -35,10 +35,8 @@ $baseUrlCliente = '/agri/AgricolaD_LP/controllers/ClienteControlador.php';
                     <td><?= htmlspecialchars($c['telefono']) ?></td>
                     <td><?= htmlspecialchars($c['correo']) ?></td>
                     <td>
-                        <a href="<?= $baseUrlCliente ?>?accion=editar&id=<?= $c['idCliente'] ?>">Editar</a> |
-                        <a href="<?= $baseUrlCliente ?>?accion=eliminar&id=<?= $c['idCliente'] ?>"
-                           onclick="return confirm('¿Seguro de eliminar este cliente?');">
-                            Eliminar
+                        <a href="../../controllers/ClienteControlador.php?accion=editar&id=<?= $c['idCliente'] ?>">Editar</a>
+                        <a href="../../controllers/ClienteControlador.php?accion=eliminar&id=<?= $c['idCliente'] ?>">Eliminar</a>
                         </a>
                     </td>
                 </tr>

@@ -11,7 +11,7 @@ $baseUrlDistribucion = '/agri/AgricolaD_LP/controllers/DistribucionControlador.p
 <body>
     <h1>Listado de Distribuciones</h1>
 
-    <a href="<?= $baseUrlDistribucion ?>?accion=crear">Nueva Distribución</a>
+    <a href="../../controllers/DistribucionControlador.php?accion=crear">Nueva Distribución</a>
     <br><br>
 
     <table border="1" cellpadding="5">
@@ -35,8 +35,8 @@ $baseUrlDistribucion = '/agri/AgricolaD_LP/controllers/DistribucionControlador.p
                     <td><?= htmlspecialchars($d['rutaAsignada']) ?></td>
                     <td><?= htmlspecialchars($d['transportista']) ?></td>
                     <td>
-                        <a href="<?= $baseUrlDistribucion ?>?accion=editar&id=<?= $d['idDistribucion'] ?>">Editar</a> |
-                        <a href="<?= $baseUrlDistribucion ?>?accion=eliminar&id=<?= $d['idDistribucion'] ?>"
+                        <a href="../../controllers/DistribucionControlador.php?accion=editar&id=<?= $d['idDistribucion'] ?>">Editar</a> |
+                        <a href="../../controllers/DistribucionControlador.php?accion=eliminar&id=<?= $d['idDistribucion'] ?>">Eliminar</a>
                            onclick="return confirm('¿Seguro de eliminar esta distribución?');">
                             Eliminar
                         </a>

@@ -1,4 +1,5 @@
 <?php
+$cliente = $cliente ?? null;
 // Ruta ABSOLUTA al controlador de Cliente
 $baseUrlCliente = '/agri/AgricolaD_LP/controllers/ClienteControlador.php';
 ?>
@@ -20,7 +21,7 @@ $baseUrlCliente = '/agri/AgricolaD_LP/controllers/ClienteControlador.php';
     $correo     = $cliente['correo']    ?? '';
     ?>
 
-    <form method="post">
+    <form method="post" action="../../controllers/ClienteControlador.php?accion=<?= $cliente ? 'editar&id='.$idCliente : 'crear' ?>">
 
         <label>Nombre:</label><br>
         <input type="text" name="nombre" value="<?= htmlspecialchars($nombre) ?>" required><br><br>
@@ -35,7 +36,7 @@ $baseUrlCliente = '/agri/AgricolaD_LP/controllers/ClienteControlador.php';
         <input type="email" name="correo" value="<?= htmlspecialchars($correo) ?>" required><br><br>
 
         <button type="submit">Guardar</button>
-        <a href="<?= $baseUrlCliente ?>?accion=listar">Cancelar</a>
+        <a href="../../controllers/ClienteControlador.php?accion=listar">Cancelar</a>
 
     </form>
 

@@ -12,7 +12,7 @@ $baseUrl = '/agri/AgricolaD_LP/controllers/ProductoControlador.php';
 <body>
     <h1>Listado de Productos</h1>
 
-    <a href="<?= $baseUrl ?>?accion=crear">Nuevo Producto</a>
+    <a href="../../controllers/ProductoControlador.php?accion=crear">Nuevo Producto</a>
     <br><br>
 
     <table border="1" cellpadding="5">
@@ -42,10 +42,8 @@ $baseUrl = '/agri/AgricolaD_LP/controllers/ProductoControlador.php';
                     <td><?= htmlspecialchars($p['fechaRegistro']) ?></td>
                     <td><?= htmlspecialchars($p['estado']) ?></td>
                     <td>
-                        <a href="<?= $baseUrl ?>?accion=editar&id=<?= $p['idProducto'] ?>">Editar</a> |
-                        <a href="<?= $baseUrl ?>?accion=eliminar&id=<?= $p['idProducto'] ?>"
-                           onclick="return confirm('¿Seguro de eliminar este producto?');">
-                            Eliminar
+                        <a href="../../controllers/ProductoControlador.php?accion=editar&id=<?= $p['idProducto'] ?>">Editar</a> |
+                        <a href="../../controllers/ProductoControlador.php?accion=eliminar&id=<?= $p['idProducto'] ?>">Eliminar</a>
                         </a>
                     </td>
                 </tr>

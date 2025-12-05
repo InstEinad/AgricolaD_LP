@@ -1,4 +1,5 @@
 <?php
+$reporte = $reporte ?? null;
 $baseUrlReporte = '/agri/AgricolaD_LP/controllers/ReporteControlador.php';
 ?>
 <!DOCTYPE html>
@@ -19,7 +20,7 @@ $rango       = $reporte['rangoFecha']      ?? '';
 $idUsuario   = $reporte['Usuario_idUsuario'] ?? '';
 ?>
 
-<form method="post">
+<form method="post" action="../../controllers/ReporteControlador.php?accion=<?= $reporte ? 'editar&id='.$idReporte : 'crear' ?>">
 
     <label>Tipo de Reporte:</label><br>
     <input type="text" name="tipoReporte" value="<?= htmlspecialchars($tipo) ?>" required><br><br>
@@ -45,7 +46,7 @@ $idUsuario   = $reporte['Usuario_idUsuario'] ?? '';
     <br><br>
 
     <button type="submit">Guardar</button>
-    <a href="<?= $baseUrlReporte ?>?accion=listar">Cancelar</a>
+    <a href="../../controllers/ReporteControlador.php?accion=listar">Cancelar</a>
 
 </form>
 

@@ -1,4 +1,5 @@
 <?php
+$usuario = $usuario ?? null;
 $baseUrlUsuario = '/agri/AgricolaD_LP/controllers/UsuarioControlador.php';
 ?>
 <!DOCTYPE html>
@@ -19,7 +20,7 @@ $rol         = $usuario['rol']             ?? '';
 $idCliente   = $usuario['Cliente_idCliente'] ?? '';
 ?>
 
-<form method="post">
+<form method="post" action="../../controllers/UsuarioControlador.php?accion=<?= $usuario ? 'editar&id='.$idUsuario : 'crear' ?>">
 
     <label>Nombre:</label><br>
     <input type="text" name="nombre" value="<?= htmlspecialchars($nombre) ?>" required><br><br>
@@ -48,8 +49,7 @@ $idCliente   = $usuario['Cliente_idCliente'] ?? '';
     <br><br>
 
     <button type="submit">Guardar</button>
-    <a href="<?= $baseUrlUsuario ?>?accion=listar">Cancelar</a>
-
+    <a href="../../controllers/UsuarioControlador.php?accion=listar">Cancelar</a>
 </form>
 
 </body>

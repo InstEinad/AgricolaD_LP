@@ -1,4 +1,5 @@
 <?php
+$detalle = $detalle ?? null;
 // Ruta ABSOLUTA al controlador de DetallePedido
 $baseUrlDetalle = '/agri/AgricolaD_LP/controllers/DetallePedidoControlador.php';
 ?>
@@ -21,8 +22,8 @@ $baseUrlDetalle = '/agri/AgricolaD_LP/controllers/DetallePedidoControlador.php';
     $idPedido        = $detalle['Pedido_idPedido']     ?? '';
     ?>
 
-    <form method="post">
-
+    <form method="post" action="../../controllers/DetallePedidoControlador.php?accion=<?= $detalle ? 'editar&id='.$idDetallePedido : 'crear' ?>">
+        
         <label>Cantidad:</label><br>
         <input type="number" name="cantidad" min="1" value="<?= htmlspecialchars($cantidad) ?>" required><br><br>
 
@@ -62,7 +63,7 @@ $baseUrlDetalle = '/agri/AgricolaD_LP/controllers/DetallePedidoControlador.php';
         <br><br>
 
         <button type="submit">Guardar</button>
-        <a href="<?= $baseUrlDetalle ?>?accion=listar">Cancelar</a>
+        <a href="../../controllers/DetallePedidoControlador.php?accion=listar">Cancelar</a>
 
     </form>
 

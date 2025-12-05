@@ -1,4 +1,5 @@
 <?php
+$producto = $producto ?? null;
 $baseUrl = '/agri/AgricolaD_LP/controllers/ProductoControlador.php';
 ?>
 <!DOCTYPE html>
@@ -22,7 +23,7 @@ $baseUrl = '/agri/AgricolaD_LP/controllers/ProductoControlador.php';
     $estado             = $producto['estado']            ?? 'Disponible';
     ?>
 
-    <form method="post">
+    <form method="post" action="../../controllers/ProductoControlador.php?accion=<?= $producto ? 'editar&id='.$idProducto : 'crear' ?>">
 
         <label>Nombre:</label><br>
         <input type="text" name="nombre" value="<?= htmlspecialchars($nombre) ?>" required><br><br>
@@ -46,7 +47,7 @@ $baseUrl = '/agri/AgricolaD_LP/controllers/ProductoControlador.php';
         <input type="text" name="estado" value="<?= htmlspecialchars($estado) ?>" required><br><br>
 
         <button type="submit">Guardar</button>
-        <a href="<?= $baseUrl ?>?accion=listar">Cancelar</a>
+        <a href="../../controllers/ProductoControlador.php?accion=listar">Cancelar</a>
 
     </form>
 

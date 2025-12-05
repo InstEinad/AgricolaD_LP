@@ -1,4 +1,5 @@
 <?php
+$notificacion = $notificacion ?? null;
 // Ruta ABSOLUTA al controlador de Notificación
 $baseUrlNotif = '/agri/AgricolaD_LP/controllers/NotificacionControlador.php';
 ?>
@@ -21,7 +22,7 @@ $baseUrlNotif = '/agri/AgricolaD_LP/controllers/NotificacionControlador.php';
     $idPedido       = $notificacion['Pedido_idPedido']   ?? '';
     ?>
 
-    <form method="post">
+    <form method="post" action="../../controllers/NotificacionControlador.php?accion=<?= $notificacion ? 'editar&id='.$idNotificacion : 'crear' ?>">
 
         <label>Tipo de Notificación:</label><br>
         <input type="text" name="tipo" value="<?= htmlspecialchars($tipo) ?>" required><br><br>
@@ -61,8 +62,7 @@ $baseUrlNotif = '/agri/AgricolaD_LP/controllers/NotificacionControlador.php';
         <br><br>
 
         <button type="submit">Guardar</button>
-        <a href="<?= $baseUrlNotif ?>?accion=listar">Cancelar</a>
-
+        <a href="../../controllers/NotificacionControlador.php?accion=listar">Cancelar</a>
     </form>
 
 </body>

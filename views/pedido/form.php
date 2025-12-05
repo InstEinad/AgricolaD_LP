@@ -1,4 +1,5 @@
 <?php
+$pedido = $pedido ?? null;
 // Ruta ABSOLUTA al controlador de Pedido
 $baseUrlPedido = '/agri/AgricolaD_LP/controllers/PedidoControlador.php';
 ?>
@@ -21,7 +22,7 @@ $baseUrlPedido = '/agri/AgricolaD_LP/controllers/PedidoControlador.php';
     $idDistribucion  = $pedido['Distribucion_idDistribucion'] ?? '';
     ?>
 
-    <form method="post">
+    <form method="post" action="../../controllers/PedidoControlador.php?accion=<?= $pedido ? 'editar&id='.$idPedido : 'crear' ?>">
 
         <label>Fecha de Pedido:</label><br>
         <input type="date" name="fechaPedido" value="<?= htmlspecialchars($fechaPedido) ?>" required><br><br>
@@ -50,8 +51,7 @@ $baseUrlPedido = '/agri/AgricolaD_LP/controllers/PedidoControlador.php';
         <br><br>
 
         <button type="submit">Guardar</button>
-        <a href="<?= $baseUrlPedido ?>?accion=listar">Cancelar</a>
-
+        <a href="../../controllers/PedidoControlador.php?accion=listar">Cancelar</a>
     </form>
 
 </body>

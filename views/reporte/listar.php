@@ -11,7 +11,7 @@ $baseUrlReporte = '/agri/AgricolaD_LP/controllers/ReporteControlador.php';
 
 <h1>Reportes</h1>
 
-<a href="<?= $baseUrlReporte ?>?accion=crear">Nuevo Reporte</a>
+<a href="../../controllers/ReporteControlador.php?accion=crear">Nuevo Reporte</a>
 <br><br>
 
 <table border="1" cellpadding="5">
@@ -37,8 +37,8 @@ $baseUrlReporte = '/agri/AgricolaD_LP/controllers/ReporteControlador.php';
                 <td><?= htmlspecialchars($r['Usuario_idUsuario']) ?></td>
 
                 <td>
-                    <a href="<?= $baseUrlReporte ?>?accion=editar&id=<?= $r['idReporte'] ?>">Editar</a> |
-                    <a href="<?= $baseUrlReporte ?>?accion=eliminar&id=<?= $r['idReporte'] ?>"
+                    <a href="../../controllers/ReporteControlador.php?accion=editar&id=<?= $r['idReporte'] ?>">Editar</a> |
+                    <a href="../../controllers/ReporteControlador.php?accion=eliminar&id=<?= $r['idReporte'] ?>">Eliminar</a>
                         onclick="return confirm('Eliminar reporte?')">Eliminar</a>
                 </td>
             </tr>

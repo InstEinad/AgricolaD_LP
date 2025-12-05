@@ -11,7 +11,7 @@ $baseUrlUsuario = '/agri/AgricolaD_LP/controllers/UsuarioControlador.php';
 
 <h1>Usuarios</h1>
 
-<a href="<?= $baseUrlUsuario ?>?accion=crear">Nuevo Usuario</a>
+<a href="../../controllers/UsuarioControlador.php?accion=crear">Nuevo Usuario</a>
 <br><br>
 
 <table border="1" cellpadding="5">
@@ -37,8 +37,8 @@ $baseUrlUsuario = '/agri/AgricolaD_LP/controllers/UsuarioControlador.php';
                 <td><?= htmlspecialchars($u['Cliente_idCliente']) ?></td>
 
                 <td>
-                    <a href="<?= $baseUrlUsuario ?>?accion=editar&id=<?= $u['idUsuario'] ?>">Editar</a> |
-                    <a href="<?= $baseUrlUsuario ?>?accion=eliminar&id=<?= $u['idUsuario'] ?>"
+                    <a href="../../controllers/UsuarioControlador.php?accion=editar&id=<?= $u['idUsuario'] ?>">Editar</a> |
+                    <a href="../../controllers/UsuarioControlador.php?accion=eliminar&id=<?= $u['idUsuario'] ?>">Eliminar</a>
                        onclick="return confirm('¿Eliminar usuario?')">Eliminar</a>
                 </td>
             </tr>

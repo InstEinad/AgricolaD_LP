@@ -8,7 +8,7 @@ class Conexion {
 
     public function __construct(
         string $host = "localhost",
-        string $dbname = "AgricolaD_bd",
+        string $dbname = "agricolaD_bd",
         string $username = "root",
         string $password = ""
     ) {

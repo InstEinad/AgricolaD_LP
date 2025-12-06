@@ -1,7 +1,7 @@
 <?php
 $cliente = $cliente ?? null;
 // Ruta ABSOLUTA al controlador de Cliente
-$baseUrlCliente = '/agri/AgricolaD_LP/controllers/ClienteControlador.php';
+$baseUrlCliente = '/AGRICOLAD_LP/controllers/ClienteControlador.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -21,7 +21,7 @@ $baseUrlCliente = '/agri/AgricolaD_LP/controllers/ClienteControlador.php';
     $correo     = $cliente['correo']    ?? '';
     ?>
 
-    <form method="post" action="../../controllers/ClienteControlador.php?accion=<?= $cliente ? 'editar&id='.$idCliente : 'crear' ?>">
+    <form method="post" action="<?= $baseUrlCliente ?>?accion=<?= $cliente ? 'editar&id='.$idCliente : 'crear' ?>">
 
         <label>Nombre:</label><br>
         <input type="text" name="nombre" value="<?= htmlspecialchars($nombre) ?>" required><br><br>

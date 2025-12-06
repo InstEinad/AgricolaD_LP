@@ -1,6 +1,6 @@
 <?php
 // Ruta ABSOLUTA al controlador de Notificación
-$baseUrlNotif = '/agri/AgricolaD_LP/controllers/NotificacionControlador.php';
+$baseUrlNotif = '/AGRICOLAD_LP/controllers/NotificacionControlador.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -11,7 +11,7 @@ $baseUrlNotif = '/agri/AgricolaD_LP/controllers/NotificacionControlador.php';
 <body>
     <h1>Listado de Notificaciones</h1>
 
-    <a href="../../controllers/NotificacionControlador.php?accion=crear">Nueva Notificación</a>
+    <a href="<?= $baseUrlNotif ?>?accion=crear">Nueva Notificación</a>
     <br><br>
 
     <table border="1" cellpadding="5">
@@ -37,11 +37,8 @@ $baseUrlNotif = '/agri/AgricolaD_LP/controllers/NotificacionControlador.php';
                     <td><?= htmlspecialchars($n['Usuario_idUsuario']) ?></td>
                     <td><?= htmlspecialchars($n['Pedido_idPedido']) ?></td>
                     <td>
-                        <a href="../../controllers/NotificacionControlador.php?accion=editar&id=<?= $n['idNotificacion'] ?>">Editar</a> |
-                        <a href="../../controllers/NotificacionControlador.php?accion=eliminar&id=<?= $n['idNotificacion'] ?>">Eliminar</a>
-                           onclick="return confirm('¿Seguro de eliminar esta notificación?');">
-                            Eliminar
-                        </a>
+                        <a href="<?= $baseUrlNotif ?>?accion=editar&id=<?= $n['idNotificacion'] ?>">Editar</a> |
+                        <a href="<?= $baseUrlNotif ?>?accion=eliminar&id=<?= $n['idNotificacion'] ?>" onclick="return confirm('¿Seguro de eliminar esta notificación?');">Eliminar</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

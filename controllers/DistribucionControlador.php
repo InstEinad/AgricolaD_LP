@@ -22,7 +22,7 @@ class DistribucionControlador {
             ];
 
             $distribucionModel->crear($data);
-            header('Location: DistribucionControlador.php?accion=listar');
+            header('Location: /AGRICOLAD_LP/controllers/DistribucionControlador.php?accion=listar');
             exit;
         }
 
@@ -49,7 +49,7 @@ class DistribucionControlador {
             ];
 
             $distribucionModel->actualizar($id, $data);
-            header('Location: DistribucionControlador.php?accion=listar');
+            header('Location: /AGRICOLAD_LP/controllers/DistribucionControlador.php?accion=listar');
             exit;
         }
 
@@ -66,7 +66,7 @@ class DistribucionControlador {
             $distribucionModel->eliminar($id);
         }
 
-        header('Location: DistribucionControlador.php?accion=listar');
+        header('Location: /AGRICOLAD_LP/controllers/DistribucionControlador.php?accion=listar');
         exit;
     }
 }

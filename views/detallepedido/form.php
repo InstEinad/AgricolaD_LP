@@ -1,7 +1,13 @@
 <?php
 $detalle = $detalle ?? null;
 // Ruta ABSOLUTA al controlador de DetallePedido
-$baseUrlDetalle = '/agri/AgricolaD_LP/controllers/DetallePedidoControlador.php';
+$baseUrlDetalle = '/AGRICOLAD_LP/controllers/DetallePedidoControlador.php';
+
+// Si esta vista se abre directamente (sin pasar por el controlador), redirigimos
+if (!isset($productos) || !isset($pedidos)) {
+    header('Location: ' . $baseUrlDetalle . '?accion=crear');
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -22,7 +28,7 @@ $baseUrlDetalle = '/agri/AgricolaD_LP/controllers/DetallePedidoControlador.php';
     $idPedido        = $detalle['Pedido_idPedido']     ?? '';
     ?>
 
-    <form method="post" action="../../controllers/DetallePedidoControlador.php?accion=<?= $detalle ? 'editar&id='.$idDetallePedido : 'crear' ?>">
+    <form method="post" action="<?= $baseUrlDetalle ?>?accion=<?= $detalle ? 'editar&id='.$idDetallePedido : 'crear' ?>">
         
         <label>Cantidad:</label><br>
         <input type="number" name="cantidad" min="1" value="<?= htmlspecialchars($cantidad) ?>" required><br><br>
@@ -35,6 +41,8 @@ $baseUrlDetalle = '/agri/AgricolaD_LP/controllers/DetallePedidoControlador.php';
         <input type="text" value="<?= htmlspecialchars($subtotal) ?>" disabled><br><br>
 
         <label>Producto:</label><br>
+        <?php $countProd = !empty($productos) ? count($productos) : 0; ?>
+        <p style="font-size:0.9em;color:#333;margin:0 0 6px 0">Productos disponibles: <?= $countProd ?></p>
         <select name="Producto_idProducto" required>
             <option value="">-- Seleccione producto --</option>
             <?php if (!empty($productos)): ?>
@@ -49,6 +57,8 @@ $baseUrlDetalle = '/agri/AgricolaD_LP/controllers/DetallePedidoControlador.php';
         <br><br>
 
         <label>Pedido:</label><br>
+        <?php $countPed = !empty($pedidos) ? count($pedidos) : 0; ?>
+        <p style="font-size:0.9em;color:#333;margin:0 0 6px 0">Pedidos disponibles: <?= $countPed ?></p>
         <select name="Pedido_idPedido" required>
             <option value="">-- Seleccione pedido --</option>
             <?php if (!empty($pedidos)): ?>
@@ -63,7 +73,7 @@ $baseUrlDetalle = '/agri/AgricolaD_LP/controllers/DetallePedidoControlador.php';
         <br><br>
 
         <button type="submit">Guardar</button>
-        <a href="../../controllers/DetallePedidoControlador.php?accion=listar">Cancelar</a>
+        <a href="<?= $baseUrlDetalle ?>?accion=listar">Cancelar</a>
 
     </form>
 

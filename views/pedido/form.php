@@ -1,7 +1,13 @@
 <?php
 $pedido = $pedido ?? null;
 // Ruta ABSOLUTA al controlador de Pedido
-$baseUrlPedido = '/agri/AgricolaD_LP/controllers/PedidoControlador.php';
+$baseUrlPedido = '/AGRICOLAD_LP/controllers/PedidoControlador.php';
+
+// Si esta vista se abre directamente (sin pasar por el controlador), redirigimos
+if (!isset($distribuciones)) {
+    header('Location: ' . $baseUrlPedido . '?accion=crear');
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -22,7 +28,7 @@ $baseUrlPedido = '/agri/AgricolaD_LP/controllers/PedidoControlador.php';
     $idDistribucion  = $pedido['Distribucion_idDistribucion'] ?? '';
     ?>
 
-    <form method="post" action="../../controllers/PedidoControlador.php?accion=<?= $pedido ? 'editar&id='.$idPedido : 'crear' ?>">
+    <form method="post" action="<?= $baseUrlPedido ?>?accion=<?= $pedido ? 'editar&id='.$idPedido : 'crear' ?>">
 
         <label>Fecha de Pedido:</label><br>
         <input type="date" name="fechaPedido" value="<?= htmlspecialchars($fechaPedido) ?>" required><br><br>
@@ -37,6 +43,10 @@ $baseUrlPedido = '/agri/AgricolaD_LP/controllers/PedidoControlador.php';
         <input type="number" name="total" value="<?= htmlspecialchars($total) ?>" required><br><br>
 
         <label>Distribución:</label><br>
+        <?php
+        $countDistrib = !empty($distribuciones) ? count($distribuciones) : 0;
+        ?>
+        <p style="font-size:0.9em;color:#333;margin:0 0 6px 0">Opciones disponibles: <?= $countDistrib ?></p>
         <select name="Distribucion_idDistribucion" required>
             <option value="">-- Seleccione distribución --</option>
             <?php if (!empty($distribuciones)): ?>
@@ -51,7 +61,7 @@ $baseUrlPedido = '/agri/AgricolaD_LP/controllers/PedidoControlador.php';
         <br><br>
 
         <button type="submit">Guardar</button>
-        <a href="../../controllers/PedidoControlador.php?accion=listar">Cancelar</a>
+        <a href="<?= $baseUrlPedido ?>?accion=listar">Cancelar</a>
     </form>
 
 </body>

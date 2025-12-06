@@ -25,7 +25,7 @@ class ProductoControlador {
             ];
 
             $productoModel->crear($data);
-            header('Location: ProductoControlador.php?accion=listar');
+            header('Location: /AGRICOLAD_LP/controllers/ProductoControlador.php?accion=listar');
             exit;
         }
 
@@ -55,7 +55,7 @@ class ProductoControlador {
             ];
 
             $productoModel->actualizar($id, $data);
-            header('Location: ProductoControlador.php?accion=listar');
+            header('Location: /AGRICOLAD_LP/controllers/ProductoControlador.php?accion=listar');
             exit;
         }
 
@@ -72,7 +72,7 @@ class ProductoControlador {
             $productoModel->eliminar($id);
         }
 
-        header('Location: ProductoControlador.php?accion=listar');
+        header('Location: /AGRICOLAD_LP/controllers/ProductoControlador.php?accion=listar');
         exit;
     }
 }

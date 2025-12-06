@@ -29,7 +29,7 @@ class ReporteControlador {
 
             $reporteModel->crear($data);
 
-            header('Location: ReporteControlador.php?accion=listar');
+            header('Location: /AGRICOLAD_LP/controllers/ReporteControlador.php?accion=listar');
             exit;
         }
 
@@ -60,7 +60,7 @@ class ReporteControlador {
 
             $reporteModel->actualizar($id, $data);
 
-            header('Location: ReporteControlador.php?accion=listar');
+            header('Location: /AGRICOLAD_LP/controllers/ReporteControlador.php?accion=listar');
             exit;
         }
 
@@ -76,7 +76,7 @@ class ReporteControlador {
             $reporteModel->eliminar($id);
         }
 
-        header('Location: ReporteControlador.php?accion=listar');
+        header('Location: /AGRICOLAD_LP/controllers/ReporteControlador.php?accion=listar');
         exit;
     }
 }

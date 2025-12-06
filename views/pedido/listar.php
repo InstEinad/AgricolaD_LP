@@ -1,6 +1,6 @@
 <?php
 // Ruta ABSOLUTA al controlador de Pedido
-$baseUrlPedido = '/agri/AgricolaD_LP/controllers/PedidoControlador.php';
+$baseUrlPedido = '/AGRICOLAD_LP/controllers/PedidoControlador.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -11,7 +11,7 @@ $baseUrlPedido = '/agri/AgricolaD_LP/controllers/PedidoControlador.php';
 <body>
     <h1>Listado de Pedidos</h1>
 
-    <a href="../../controllers/PedidoControlador.php?accion=crear">Nuevo Pedido</a>
+    <a href="<?= $baseUrlPedido ?>?accion=crear">Nuevo Pedido</a>
     <br><br>
 
     <table border="1" cellpadding="5">
@@ -37,11 +37,8 @@ $baseUrlPedido = '/agri/AgricolaD_LP/controllers/PedidoControlador.php';
                     <td><?= htmlspecialchars($p['total']) ?></td>
                     <td><?= htmlspecialchars($p['Distribucion_idDistribucion']) ?></td>
                     <td>
-                        <a href="../../controllers/PedidoControlador.php?accion=editar&id=<?= $p['idPedido'] ?>">Editar</a> |
-                        <a href="../../controllers/PedidoControlador.php?accion=eliminar&id=<?= $p['idPedido'] ?>">Eliminar</a>
-                           onclick="return confirm('¿Seguro de eliminar este pedido?');">
-                            Eliminar
-                        </a>
+                        <a href="<?= $baseUrlPedido ?>?accion=editar&id=<?= $p['idPedido'] ?>">Editar</a> |
+                        <a href="<?= $baseUrlPedido ?>?accion=eliminar&id=<?= $p['idPedido'] ?>" onclick="return confirm('¿Seguro de eliminar este pedido?');">Eliminar</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

@@ -1,7 +1,7 @@
 <?php
 $distribucion = $distribucion ?? null;
 // Ruta ABSOLUTA al controlador de Distribución
-$baseUrlDistribucion = '/agri/AgricolaD_LP/controllers/DistribucionControlador.php';
+$baseUrlDistribucion = '/AGRICOLAD_LP/controllers/DistribucionControlador.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -21,7 +21,7 @@ $baseUrlDistribucion = '/agri/AgricolaD_LP/controllers/DistribucionControlador.p
     $transportista  = $distribucion['transportista']  ?? '';
     ?>
 
-    <form method="post" action="../../controllers/DistribucionControlador.php?accion=<?= $distribucion ? 'editar&id='.$idDistribucion : 'crear' ?>">
+    <form method="post" action="<?= $baseUrlDistribucion ?>?accion=<?= $distribucion ? 'editar&id='.$idDistribucion : 'crear' ?>">
 
         <label>Fecha de Salida:</label><br>
         <input type="date" name="fechaSalida" value="<?= htmlspecialchars($fechaSalida) ?>" required><br><br>
@@ -36,7 +36,7 @@ $baseUrlDistribucion = '/agri/AgricolaD_LP/controllers/DistribucionControlador.p
         <input type="text" name="transportista" value="<?= htmlspecialchars($transportista) ?>" required><br><br>
 
         <button type="submit">Guardar</button>
-        <a href="../../controllers/DistribucionControlador.php?accion=listar">Cancelar</a>
+        <a href="<?= $baseUrlDistribucion ?>?accion=listar">Cancelar</a>
 
     </form>
 

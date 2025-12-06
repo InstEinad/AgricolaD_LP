@@ -1,5 +1,5 @@
 <?php
-$baseUrlReporte = '/agri/AgricolaD_LP/controllers/ReporteControlador.php';
+$baseUrlReporte = '/AGRICOLAD_LP/controllers/ReporteControlador.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -11,7 +11,7 @@ $baseUrlReporte = '/agri/AgricolaD_LP/controllers/ReporteControlador.php';
 
 <h1>Reportes</h1>
 
-<a href="../../controllers/ReporteControlador.php?accion=crear">Nuevo Reporte</a>
+<a href="<?= $baseUrlReporte ?>?accion=crear">Nuevo Reporte</a>
 <br><br>
 
 <table border="1" cellpadding="5">
@@ -37,9 +37,8 @@ $baseUrlReporte = '/agri/AgricolaD_LP/controllers/ReporteControlador.php';
                 <td><?= htmlspecialchars($r['Usuario_idUsuario']) ?></td>
 
                 <td>
-                    <a href="../../controllers/ReporteControlador.php?accion=editar&id=<?= $r['idReporte'] ?>">Editar</a> |
-                    <a href="../../controllers/ReporteControlador.php?accion=eliminar&id=<?= $r['idReporte'] ?>">Eliminar</a>
-                        onclick="return confirm('Eliminar reporte?')">Eliminar</a>
+                    <a href="<?= $baseUrlReporte ?>?accion=editar&id=<?= $r['idReporte'] ?>">Editar</a> |
+                    <a href="<?= $baseUrlReporte ?>?accion=eliminar&id=<?= $r['idReporte'] ?>" onclick="return confirm('Eliminar reporte?')">Eliminar</a>
                 </td>
             </tr>
         <?php endforeach; ?>

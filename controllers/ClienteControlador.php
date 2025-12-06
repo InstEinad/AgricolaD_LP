@@ -22,7 +22,7 @@ class ClienteControlador {
             ];
 
             $clienteModel->crear($data);
-            header('Location: ClienteControlador.php?accion=listar');
+            header('Location: /AGRICOLAD_LP/controllers/ClienteControlador.php?accion=listar');
             exit;
         }
 
@@ -49,7 +49,7 @@ class ClienteControlador {
             ];
 
             $clienteModel->actualizar($id, $data);
-            header('Location: ClienteControlador.php?accion=listar');
+            header('Location: /AGRICOLAD_LP/controllers/ClienteControlador.php?accion=listar');
             exit;
         }
 
@@ -66,7 +66,7 @@ class ClienteControlador {
             $clienteModel->eliminar($id);
         }
 
-        header('Location: ClienteControlador.php?accion=listar');
+        header('Location: /AGRICOLAD_LP/controllers/ClienteControlador.php?accion=listar');
         exit;
     }
 }

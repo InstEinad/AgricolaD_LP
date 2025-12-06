@@ -1,7 +1,13 @@
 <?php
 $notificacion = $notificacion ?? null;
 // Ruta ABSOLUTA al controlador de Notificación
-$baseUrlNotif = '/agri/AgricolaD_LP/controllers/NotificacionControlador.php';
+$baseUrlNotif = '/AGRICOLAD_LP/controllers/NotificacionControlador.php';
+
+// Si esta vista se abre directamente sin pasar por el controlador, redirigimos
+if (!isset($usuarios) || !isset($pedidos)) {
+    header('Location: ' . $baseUrlNotif . '?accion=crear');
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -22,7 +28,7 @@ $baseUrlNotif = '/agri/AgricolaD_LP/controllers/NotificacionControlador.php';
     $idPedido       = $notificacion['Pedido_idPedido']   ?? '';
     ?>
 
-    <form method="post" action="../../controllers/NotificacionControlador.php?accion=<?= $notificacion ? 'editar&id='.$idNotificacion : 'crear' ?>">
+    <form method="post" action="<?= $baseUrlNotif ?>?accion=<?= $notificacion ? 'editar&id='.$idNotificacion : 'crear' ?>">
 
         <label>Tipo de Notificación:</label><br>
         <input type="text" name="tipo" value="<?= htmlspecialchars($tipo) ?>" required><br><br>

@@ -36,7 +36,7 @@ class DetallePedidoControlador {
             ];
 
             $detalleModel->crear($data);
-            header('Location: DetallePedidoControlador.php?accion=listar');
+            header('Location: /AGRICOLAD_LP/controllers/DetallePedidoControlador.php?accion=listar');
             exit;
         }
 
@@ -75,7 +75,7 @@ class DetallePedidoControlador {
             ];
 
             $detalleModel->actualizar($id, $data);
-            header('Location: DetallePedidoControlador.php?accion=listar');
+            header('Location: /AGRICOLAD_LP/controllers/DetallePedidoControlador.php?accion=listar');
             exit;
         }
 
@@ -92,7 +92,7 @@ class DetallePedidoControlador {
             $detalleModel->eliminar($id);
         }
 
-        header('Location: DetallePedidoControlador.php?accion=listar');
+        header('Location: /AGRICOLAD_LP/controllers/DetallePedidoControlador.php?accion=listar');
         exit;
     }
 }

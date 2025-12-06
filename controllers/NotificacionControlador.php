@@ -31,7 +31,7 @@ class NotificacionControlador {
             ];
 
             $notifModel->crear($data);
-            header('Location: NotificacionControlador.php?accion=listar');
+            header('Location: /AGRICOLAD_LP/controllers/NotificacionControlador.php?accion=listar');
             exit;
         }
 
@@ -66,7 +66,7 @@ class NotificacionControlador {
             ];
 
             $notifModel->actualizar($id, $data);
-            header('Location: NotificacionControlador.php?accion=listar');
+            header('Location: /AGRICOLAD_LP/controllers/NotificacionControlador.php?accion=listar');
             exit;
         }
 
@@ -83,7 +83,7 @@ class NotificacionControlador {
             $notifModel->eliminar($id);
         }
 
-        header('Location: NotificacionControlador.php?accion=listar');
+        header('Location: /AGRICOLAD_LP/controllers/NotificacionControlador.php?accion=listar');
         exit;
     }
 }

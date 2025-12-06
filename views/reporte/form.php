@@ -1,6 +1,12 @@
 <?php
 $reporte = $reporte ?? null;
-$baseUrlReporte = '/agri/AgricolaD_LP/controllers/ReporteControlador.php';
+$baseUrlReporte = '/AGRICOLAD_LP/controllers/ReporteControlador.php';
+
+// Si la vista se abre directamente sin pasar por el controlador, redirigimos
+if (!isset($usuarios)) {
+    header('Location: ' . $baseUrlReporte . '?accion=crear');
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -20,7 +26,7 @@ $rango       = $reporte['rangoFecha']      ?? '';
 $idUsuario   = $reporte['Usuario_idUsuario'] ?? '';
 ?>
 
-<form method="post" action="../../controllers/ReporteControlador.php?accion=<?= $reporte ? 'editar&id='.$idReporte : 'crear' ?>">
+<form method="post" action="<?= $baseUrlReporte ?>?accion=<?= $reporte ? 'editar&id='.$idReporte : 'crear' ?>">
 
     <label>Tipo de Reporte:</label><br>
     <input type="text" name="tipoReporte" value="<?= htmlspecialchars($tipo) ?>" required><br><br>
@@ -46,7 +52,7 @@ $idUsuario   = $reporte['Usuario_idUsuario'] ?? '';
     <br><br>
 
     <button type="submit">Guardar</button>
-    <a href="../../controllers/ReporteControlador.php?accion=listar">Cancelar</a>
+    <a href="<?= $baseUrlReporte ?>?accion=listar">Cancelar</a>
 
 </form>
 

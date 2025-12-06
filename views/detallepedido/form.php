@@ -14,6 +14,7 @@ if (!isset($productos) || !isset($pedidos)) {
 <head>
     <meta charset="UTF-8">
     <title><?= $detalle ? 'Editar' : 'Nuevo' ?> Detalle de Pedido</title>
+    <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/estilos.css">
 </head>
 <body>
     <h1><?= $detalle ? 'Editar' : 'Nuevo' ?> Detalle de Pedido</h1>

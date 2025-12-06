@@ -8,6 +8,7 @@ $baseUrlDistribucion = '/AGRICOLAD_LP/controllers/DistribucionControlador.php';
 <head>
     <meta charset="UTF-8">
     <title><?= $distribucion ? 'Editar' : 'Nueva' ?> Distribución</title>
+    <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/estilos.css">
 </head>
 <body>
     <h1><?= $distribucion ? 'Editar' : 'Nueva' ?> Distribución</h1>

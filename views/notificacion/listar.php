@@ -11,6 +11,7 @@ $baseUrlNotif = '/AGRICOLAD_LP/controllers/NotificacionControlador.php';
 </head>
 <body>
     <h1>Listado de Notificaciones</h1>
+    <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/estilos.css">
 
     <a href="<?= $baseUrlNotif ?>?accion=crear">Nueva Notificación</a>
     <br><br>

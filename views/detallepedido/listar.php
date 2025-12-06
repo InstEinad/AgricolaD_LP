@@ -8,6 +8,7 @@ $baseUrlDetalle = '/AGRICOLAD_LP/controllers/DetallePedidoControlador.php';
     <meta charset="UTF-8">
     <title>Listado de Detalles de Pedido</title>
     <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/modal.css">
+    <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/estilos.css">
 </head>
 <body>
     <h1>Listado de Detalles de Pedido</h1>

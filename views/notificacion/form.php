@@ -14,6 +14,7 @@ if (!isset($usuarios) || !isset($pedidos)) {
 <head>
     <meta charset="UTF-8">
     <title><?= $notificacion ? 'Editar' : 'Nueva' ?> Notificación</title>
+    <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/estilos.css">
 </head>
 <body>
     <h1><?= $notificacion ? 'Editar' : 'Nueva' ?> Notificación</h1>

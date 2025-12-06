@@ -14,6 +14,7 @@ if (!isset($distribuciones)) {
 <head>
     <meta charset="UTF-8">
     <title><?= $pedido ? 'Editar' : 'Nuevo' ?> Pedido</title>
+    <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/estilos.css">
 </head>
 <body>
     <h1><?= $pedido ? 'Editar' : 'Nuevo' ?> Pedido</h1>

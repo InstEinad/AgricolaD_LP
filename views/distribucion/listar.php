@@ -11,6 +11,7 @@ $baseUrlDistribucion = '/AGRICOLAD_LP/controllers/DistribucionControlador.php';
 </head>
 <body>
     <h1>Listado de Distribuciones</h1>
+    <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/estilos.css">
 
     <a href="<?= $baseUrlDistribucion ?>?accion=crear">Nueva Distribución</a>
     <br><br>

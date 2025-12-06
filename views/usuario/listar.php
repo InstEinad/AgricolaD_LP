@@ -6,11 +6,10 @@ $baseUrlUsuario = '/AGRICOLAD_LP/controllers/UsuarioControlador.php';
 <head>
     <meta charset="UTF-8">
     <title>Listado de Usuarios</title>
-    <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/modal.css">
     <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/estilos.css">
 </head>
 <body>
-
+<h1>Usuarios</h1>
 <h1>Usuarios</h1>
 
 <a href="/AGRICOLAD_LP/controllers/UsuarioControlador.php?accion=crear">Nuevo Usuario</a>

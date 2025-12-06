@@ -7,7 +7,6 @@ $baseUrlCliente = '/agri/AgricolaD_LP/controllers/ClienteControlador.php';
 <head>
     <meta charset="UTF-8">
     <title>Listado de Clientes</title>
-    <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/modal.css">
     <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/estilos.css">
 </head>
 <body>

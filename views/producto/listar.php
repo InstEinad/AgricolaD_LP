@@ -8,7 +8,6 @@ $baseUrl = '/AGRICOLAD_LP/controllers/ProductoControlador.php';
 <head>
     <meta charset="UTF-8">
     <title>Listado de Productos</title>
-    <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/modal.css">
     <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/estilos.css">
 </head>
 <body>

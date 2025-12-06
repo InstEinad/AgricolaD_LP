@@ -7,10 +7,10 @@ $baseUrl = '/AGRICOLAD_LP/controllers/ProductoControlador.php';
 <head>
     <meta charset="UTF-8">
     <title><?= $producto ? 'Editar' : 'Nuevo' ?> Producto</title>
+    <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/estilos.css">
 </head>
 <body>
     <h1><?= $producto ? 'Editar' : 'Nuevo' ?> Producto</h1>
-    <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/estilos.css">
 
     <?php
     // Valores para cargar si estamos editando

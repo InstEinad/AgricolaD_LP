@@ -13,11 +13,10 @@ if (!isset($usuarios)) {
 <head>
     <meta charset="UTF-8">
     <title><?= $reporte ? 'Editar Reporte' : 'Nuevo Reporte' ?></title>
+    <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/estilos.css">
 </head>
 <body>
-
-    <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/estilos.css">
-<h1><?= $reporte ? 'Editar Reporte' : 'Nuevo Reporte' ?></h1>
+    <h1><?= $reporte ? 'Editar Reporte' : 'Nuevo Reporte' ?></h1>
 
 <?php
 $idReporte   = $reporte['idReporte']        ?? '';

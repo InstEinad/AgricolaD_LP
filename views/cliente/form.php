@@ -9,8 +9,10 @@ $baseUrlCliente = '/AGRICOLAD_LP/controllers/ClienteControlador.php';
     <meta charset="UTF-8">
     <title><?= $cliente ? 'Editar' : 'Nuevo' ?> Cliente</title>
     <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/estilos.css">
+    
 </head>
 <body>
+ 
     <h1><?= $cliente ? 'Editar' : 'Nuevo' ?> Cliente</h1>
 
     <?php

@@ -7,7 +7,6 @@ $baseUrlPedido = '/AGRICOLAD_LP/controllers/PedidoControlador.php';
 <head>
     <meta charset="UTF-8">
     <title>Listado de Pedidos</title>
-    <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/modal.css">
     <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/estilos.css">
 </head>
 <body>

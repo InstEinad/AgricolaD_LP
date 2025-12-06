@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if ($r && password_verify($clave, $r['clave'])) {
            
-                header("Location: bienvenido.html");
+                header("Location: /AGRICOLAD_LP/login/bienvenido.html");
                 exit;
             } else {
                 $mensaje = "Usuario o contraseña incorrecta";

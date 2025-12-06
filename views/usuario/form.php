@@ -7,6 +7,7 @@ $baseUrlUsuario = '/agri/AgricolaD_LP/controllers/UsuarioControlador.php';
 <head>
     <meta charset="UTF-8">
     <title><?= $usuario ? 'Editar Usuario' : 'Nuevo Usuario' ?></title>
+    <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/estilos.css">
 </head>
 <body>
 

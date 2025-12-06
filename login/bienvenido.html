@@ -1,99 +1,219 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Bienvenido - AgricolaD</title>
-	<link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/estilos.css">
-	<style>
-		.welcome-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 12px; margin-top: 20px; }
-		.card { padding: 16px; border: 1px solid #e0e0e0; border-radius: 8px; background:#fff; }
-		.card a { display:inline-block; margin-top:10px; }
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido - AgricolaD</title>
+    <link rel="stylesheet" href="/AGRICOLAD_LP/assets/styles/estilos.css">
 </head>
 <body>
-<div class="container">
-
-    <header class="welcome-header">
-        <div>
-            <h1>Panel principal de AgricolaD</h1>
-            <p class="welcome-subtitle">
-                Plataforma web para la gestión integral de clientes, productos, pedidos, distribución logística 
-                y control de inventarios en empresas agrícolas pequeñas y medianas.
-            </p>
-            <p class="welcome-description">
-                Desde este panel puedes registrar nuevas entidades, consultar información histórica, 
-                monitorear el estado de los pedidos y generar reportes operativos para apoyar la toma de decisiones.
-            </p>
+    <header class="topbar">
+        <div class="topbar-inner container">
+            <div class="brand">🌱 AgrícolaD</div>
+            <nav class="main-nav">
+                <ul>
+                    <li class="dropdown">
+                        <span>Clientes</span>
+                        <ul class="dropdown-menu">
+                            <li><a href="/AGRICOLAD_LP/controllers/ClienteControlador.php?accion=crear">Nuevo Cliente</a></li>
+                            <li><a href="/AGRICOLAD_LP/controllers/ClienteControlador.php?accion=listar">Listar Clientes</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <span>Productos</span>
+                        <ul class="dropdown-menu">
+                            <li><a href="/AGRICOLAD_LP/controllers/ProductoControlador.php?accion=crear">Nuevo Producto</a></li>
+                            <li><a href="/AGRICOLAD_LP/controllers/ProductoControlador.php?accion=listar">Listar Productos</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <span>Distribuciones</span>
+                        <ul class="dropdown-menu">
+                            <li><a href="/AGRICOLAD_LP/controllers/DistribucionControlador.php?accion=crear">Nueva Distribución</a></li>
+                            <li><a href="/AGRICOLAD_LP/controllers/DistribucionControlador.php?accion=listar">Listar Distribuciones</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <span>Pedidos</span>
+                        <ul class="dropdown-menu">
+                            <li><a href="/AGRICOLAD_LP/controllers/PedidoControlador.php?accion=crear">Nuevo Pedido</a></li>
+                            <li><a href="/AGRICOLAD_LP/controllers/PedidoControlador.php?accion=listar">Listar Pedidos</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <span>Reportes</span>
+                        <ul class="dropdown-menu">
+                            <li><a href="/AGRICOLAD_LP/controllers/ReporteControlador.php?accion=crear">Nuevo Reporte</a></li>
+                            <li><a href="/AGRICOLAD_LP/controllers/ReporteControlador.php?accion=listar">Listar Reportes</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <span>Usuarios</span>
+                        <ul class="dropdown-menu">
+                            <li><a href="/AGRICOLAD_LP/controllers/UsuarioControlador.php?accion=crear">Nuevo Usuario</a></li>
+                            <li><a href="/AGRICOLAD_LP/controllers/UsuarioControlador.php?accion=listar">Listar Usuarios</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="login.html" class="logout-link">🔓 Cerrar Sesión</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <section class="welcome-actions">
-        <h2>Secciones del sistema</h2>
-        <p class="welcome-help">
-            Selecciona el módulo con el que deseas trabajar. Cada tarjeta agrupa las opciones de creación y consulta.
-        </p>
+    <main class="container welcome-container">
+        <section class="about-section">
+            <div class="about-text">
+                <h1>🌾 Sobre Nosotros</h1>
+                <p class="welcome-subtitle">AgrícolaD es una plataforma orientada a mejorar la gestión operativa de pequeñas y medianas empresas agrícolas.</p>
+                <p class="welcome-description">Nuestra misión es facilitar el control de inventarios, la administración de pedidos y la logística de distribución con herramientas sencillas y accesibles. Ofrecemos módulos para clientes, productos, pedidos, distribución y reportes que permiten llevar un seguimiento claro de la operación diaria.</p>
+                <p class="welcome-description">Integramos alertas y notificaciones para evitar quiebres de stock y simplificamos la generación de reportes para la toma de decisiones. Nuestro objetivo es optimizar tiempos y reducir pérdidas mediante procesos más ágiles y trazables.</p>
+            </div>
+            <div class="about-img">
+                <img src="/AGRICOLAD_LP/assets/img/Agricola.jpeg" alt="Agricultura moderna" onerror="this.src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+            </div>
+        </section>
 
-        <div class="welcome-grid">
-            <div class="card">
-                <h3>Clientes</h3>
-                <p>Registra productores, distribuidores o puntos de venta y consulta su historial de pedidos.</p>
-                <a class="btn" href="/AGRICOLAD_LP/controllers/ClienteControlador.php?accion=crear">Nuevo Cliente</a>
-                <a class="btn btn-sm" href="/AGRICOLAD_LP/controllers/ClienteControlador.php?accion=listar">Listar Clientes</a>
+        <section class="benefits">
+            <h2>✨ Beneficios de usar AgrícolaD</h2>
+            <div class="benefits-grid">
+                <div class="benefit">
+                    <h4>📈 Mayor Control</h4>
+                    <p>Gestión completa de inventarios, pedidos y distribución en un solo lugar.</p>
+                </div>
+                <div class="benefit">
+                    <h4>⏱️ Ahorro de Tiempo</h4>
+                    <p>Automatización de procesos repetitivos y generación rápida de reportes.</p>
+                </div>
+                <div class="benefit">
+                    <h4>📊 Toma de Decisiones</h4>
+                    <p>Reportes detallados para análisis y planificación estratégica.</p>
+                </div>
+                <div class="benefit">
+                    <h4>🔔 Alertas Inteligentes</h4>
+                    <p>Notificaciones automáticas para stock bajo y eventos importantes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="welcome-actions">
+            <div class="section-header">
+                <h2>🚀 Secciones del Sistema</h2>
+                <p class="welcome-help">Selecciona el módulo con el que deseas trabajar. Cada tarjeta agrupa las opciones de creación y consulta.</p>
             </div>
 
-            <div class="card">
-                <h3>Productos</h3>
-                <p>Administra el catálogo de insumos y productos agrícolas disponibles para la venta.</p>
-                <a class="btn" href="/AGRICOLAD_LP/controllers/ProductoControlador.php?accion=crear">Nuevo Producto</a>
-                <a class="btn btn-sm" href="/AGRICOLAD_LP/controllers/ProductoControlador.php?accion=listar">Listar Productos</a>
-            </div>
+            <div class="welcome-grid">
+                <div class="card">
+                    <div class="card-icon">👥</div>
+                    <h3>Clientes</h3>
+                    <p>Registra productores, distribuidores o puntos de venta y consulta su historial de pedidos.</p>
+                    <div class="card-actions">
+                        <a class="btn btn-success" href="/AGRICOLAD_LP/controllers/ClienteControlador.php?accion=crear">Nuevo</a>
+                        <a class="btn btn-sm" href="/AGRICOLAD_LP/controllers/ClienteControlador.php?accion=listar">Listar</a>
+                    </div>
+                </div>
 
-            <div class="card">
-                <h3>Distribuciones</h3>
-                <p>Organiza las rutas de reparto y asigna transportistas para cada pedido.</p>
-                <a class="btn" href="/AGRICOLAD_LP/controllers/DistribucionControlador.php?accion=crear">Nueva Distribución</a>
-                <a class="btn btn-sm" href="/AGRICOLAD_LP/controllers/DistribucionControlador.php?accion=listar">Listar Distribuciones</a>
-            </div>
+                <div class="card">
+                    <div class="card-icon">📦</div>
+                    <h3>Productos</h3>
+                    <p>Administra el catálogo de insumos y productos agrícolas disponibles para la venta.</p>
+                    <div class="card-actions">
+                        <a class="btn btn-success" href="/AGRICOLAD_LP/controllers/ProductoControlador.php?accion=crear">Nuevo</a>
+                        <a class="btn btn-sm" href="/AGRICOLAD_LP/controllers/ProductoControlador.php?accion=listar">Listar</a>
+                    </div>
+                </div>
 
-            <div class="card">
-                <h3>Pedidos</h3>
-                <p>Registra nuevas órdenes, actualiza su estado y revisa el detalle de cada solicitud.</p>
-                <a class="btn" href="/AGRICOLAD_LP/controllers/PedidoControlador.php?accion=crear">Nuevo Pedido</a>
-                <a class="btn btn-sm" href="/AGRICOLAD_LP/controllers/PedidoControlador.php?accion=listar">Listar Pedidos</a>
-            </div>
+                <div class="card">
+                    <div class="card-icon">🚚</div>
+                    <h3>Distribuciones</h3>
+                    <p>Organiza las rutas de reparto y asigna transportistas para cada pedido.</p>
+                    <div class="card-actions">
+                        <a class="btn btn-success" href="/AGRICOLAD_LP/controllers/DistribucionControlador.php?accion=crear">Nuevo</a>
+                        <a class="btn btn-sm" href="/AGRICOLAD_LP/controllers/DistribucionControlador.php?accion=listar">Listar</a>
+                    </div>
+                </div>
 
-            <div class="card">
-                <h3>Detalle de Pedidos</h3>
-                <p>Gestiona los productos asociados a cada pedido y sus cantidades.</p>
-                <a class="btn" href="/AGRICOLAD_LP/controllers/DetallePedidoControlador.php?accion=crear">Nuevo Detalle</a>
-                <a class="btn btn-sm" href="/AGRICOLAD_LP/controllers/DetallePedidoControlador.php?accion=listar">Listar Detalles</a>
-            </div>
+                <div class="card">
+                    <div class="card-icon">📝</div>
+                    <h3>Pedidos</h3>
+                    <p>Registra nuevas órdenes, actualiza su estado y revisa el detalle de cada solicitud.</p>
+                    <div class="card-actions">
+                        <a class="btn btn-success" href="/AGRICOLAD_LP/controllers/PedidoControlador.php?accion=crear">Nuevo</a>
+                        <a class="btn btn-sm" href="/AGRICOLAD_LP/controllers/PedidoControlador.php?accion=listar">Listar</a>
+                    </div>
+                </div>
 
-            <div class="card">
-                <h3>Notificaciones</h3>
-                <p>Configura avisos sobre vencimientos, alertas de stock y eventos operativos.</p>
-                <a class="btn" href="/AGRICOLAD_LP/controllers/NotificacionControlador.php?accion=crear">Nueva Notificación</a>
-                <a class="btn btn-sm" href="/AGRICOLAD_LP/controllers/NotificacionControlador.php?accion=listar">Listar Notificaciones</a>
-            </div>
+                <div class="card">
+                    <div class="card-icon">📋</div>
+                    <h3>Detalle de Pedidos</h3>
+                    <p>Gestiona los productos asociados a cada pedido y sus cantidades.</p>
+                    <div class="card-actions">
+                        <a class="btn btn-success" href="/AGRICOLAD_LP/controllers/DetallePedidoControlador.php?accion=crear">Nuevo</a>
+                        <a class="btn btn-sm" href="/AGRICOLAD_LP/controllers/DetallePedidoControlador.php?accion=listar">Listar</a>
+                    </div>
+                </div>
 
-            <div class="card">
-                <h3>Reportes</h3>
-                <p>Genera reportes de ventas, rotación de inventario y desempeño logístico.</p>
-                <a class="btn" href="/AGRICOLAD_LP/controllers/ReporteControlador.php?accion=crear">Nuevo Reporte</a>
-                <a class="btn btn-sm" href="/AGRICOLAD_LP/controllers/ReporteControlador.php?accion=listar">Listar Reportes</a>
-            </div>
+                <div class="card">
+                    <div class="card-icon">🔔</div>
+                    <h3>Notificaciones</h3>
+                    <p>Configura avisos sobre vencimientos, alertas de stock y eventos operativos.</p>
+                    <div class="card-actions">
+                        <a class="btn btn-success" href="/AGRICOLAD_LP/controllers/NotificacionControlador.php?accion=crear">Nuevo</a>
+                        <a class="btn btn-sm" href="/AGRICOLAD_LP/controllers/NotificacionControlador.php?accion=listar">Listar</a>
+                    </div>
+                </div>
 
-            <div class="card">
-                <h3>Usuarios</h3>
-                <p>Administra las cuentas de acceso y los roles de los usuarios del sistema.</p>
-                <a class="btn" href="/AGRICOLAD_LP/controllers/UsuarioControlador.php?accion=crear">Nuevo Usuario</a>
-                <a class="btn btn-sm" href="/AGRICOLAD_LP/controllers/UsuarioControlador.php?accion=listar">Listar Usuarios</a>
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h3>Reportes</h3>
+                    <p>Genera reportes de ventas, rotación de inventario y desempeño logístico.</p>
+                    <div class="card-actions">
+                        <a class="btn btn-success" href="/AGRICOLAD_LP/controllers/ReporteControlador.php?accion=crear">Nuevo</a>
+                        <a class="btn btn-sm" href="/AGRICOLAD_LP/controllers/ReporteControlador.php?accion=listar">Listar</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">👤</div>
+                    <h3>Usuarios</h3>
+                    <p>Administra las cuentas de acceso y los roles de los usuarios del sistema.</p>
+                    <div class="card-actions">
+                        <a class="btn btn-success" href="/AGRICOLAD_LP/controllers/UsuarioControlador.php?accion=crear">Nuevo</a>
+                        <a class="btn btn-sm" href="/AGRICOLAD_LP/controllers/UsuarioControlador.php?accion=listar">Listar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-row">
+            <a href="#" class="btn btn-cta">📞 Solicitar una Demo</a>
+            <a href="#" class="btn btn-cta secondary">📚 Ver Tutoriales</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4>AgrícolaD</h4>
+                <p>Sistema de gestión agrícola</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <div class="contact">
+                    <small>📧 contacto@agricolad.com</small>
+                    <small>📞 +52 123 456 7890</small>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Soporte</h4>
+                <div class="social-links">
+                    <a href="#">📖 Manual</a>
+                    <a href="#">💬 Ayuda</a>
+                </div>
             </div>
         </div>
-    </section>
-
-</div>
+        <div class="copyright">
+            <small>© 2024 AgrícolaD. Todos los derechos reservados.</small>
+        </div>
+    </footer>
 </body>
-
 </html>

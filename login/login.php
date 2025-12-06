@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/html; charset=utf-8');
 require_once __DIR__ . '/../conexionbd/conexion.php';
 
 $mensaje = "";
@@ -12,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $conexion = new Conexion();
             $conn = $conexion->iniciar();
 
-            $sql = "SELECT idUsuario, nombre, rol, clave FROM usuario 
+                $sql = "SELECT idUsuario, nombre, rol, `contraseña` AS clave FROM Usuario 
                     WHERE correo = :correo";
 
             $stmt = $conn->prepare($sql);
@@ -26,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header("Location: bienvenido.html");
                 exit;
             } else {
-                $mensaje = "Usuario o clave incorrecta";
+                $mensaje = "Usuario o contraseña incorrecta";
             }
 
             $conexion->terminar();

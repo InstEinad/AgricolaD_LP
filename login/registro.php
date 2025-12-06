@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/html; charset=utf-8');
 require_once __DIR__ . '/../conexionbd/conexion.php';
 
 
@@ -42,7 +43,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+<body>
 <h2>Registrar nuevo usuario</h2>
 
 
@@ -77,3 +86,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <button type="submit">Registrar</button>
 
 </form>
+</body>
+</html>

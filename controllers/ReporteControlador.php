@@ -8,6 +8,9 @@ class ReporteControlador {
     public function listar() {
         $reporteModel = new Reporte();
         $reportes = $reporteModel->obtenerTodos();
+        // usuarios para el modal
+        $usuarioModel = new Usuario();
+        $usuarios = $usuarioModel->obtenerTodos();
         require __DIR__ . '/../views/reporte/listar.php';
     }
 

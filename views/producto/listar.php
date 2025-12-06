@@ -65,7 +65,7 @@ $baseUrl = '/AGRICOLAD_LP/controllers/ProductoControlador.php';
         </tbody>
     </table>
 
-        <!-- Modal editar producto -->
+        <!-- Modal editar producto (estilo cliente) -->
         <div id="modalProducto" class="modal">
             <div class="modal-content">
                 <span id="cerrarModalProducto" class="close">&times;</span>
@@ -100,7 +100,7 @@ $baseUrl = '/AGRICOLAD_LP/controllers/ProductoControlador.php';
         </div>
 
         <script>
-            const baseUrlProducto = '<?= $baseUrl ?>';
+            window.baseUrlProducto = '<?= $baseUrl ?>';
         </script>
         <script src="/AGRICOLAD_LP/assets/scripts/productos.js"></script>
 </body>

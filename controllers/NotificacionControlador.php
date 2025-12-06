@@ -9,6 +9,11 @@ class NotificacionControlador {
     public function listar() {
         $notifModel = new Notificacion();
         $notificaciones = $notifModel->obtenerTodos();
+        // cargar usuarios y pedidos para modales/selects
+        $usuarioModel = new Usuario();
+        $pedidoModel  = new Pedido();
+        $usuarios = $usuarioModel->obtenerTodos();
+        $pedidos  = $pedidoModel->obtenerTodos();
         require __DIR__ . '/../views/notificacion/listar.php';
     }
 

@@ -20,26 +20,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $Cliente_idCliente = $_POST['Cliente_idCliente'];
 
     try {
-        $sql = "INSERT INTO Usuario(nombre, correo, clave, rol, Cliente_idCliente)
-                VALUES (:nombre, :correo, :clave, :rol, :idCliente)";
+        $sql = "INSERT INTO Usuario (nombre, correo, `contraseña`, rol, Cliente_idCliente)
+                VALUES (:nombre, :correo, :contrasena, :rol, :idCliente)";
 
         $stmt = $conn->prepare($sql);
 
         $stmt->bindParam(':nombre', $nombre);
         $stmt->bindParam(':correo', $correo);
-        $stmt->bindParam(':clave', $clave);
+        $stmt->bindParam(':contrasena', $clave);
         $stmt->bindParam(':rol', $rol);
         $stmt->bindParam(':idCliente', $Cliente_idCliente);
 
-       if ($stmt->execute()){
+        if ($stmt->execute()){
             echo "El registro del usuario fue exitoso";
-        }else{
+        } else {
             echo "Error al registrar";
-        } 
+        }
 
-        
     } catch (PDOException $e) {
-        echo  $e->getMessage();
+        echo $e->getMessage();
     }
 }
 ?>

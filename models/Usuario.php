@@ -31,7 +31,7 @@ class Usuario {
     // CREAR
     public function crear(array $data): bool {
         $sql = "INSERT INTO Usuario 
-                    (nombre, correo, contraseña, rol, Cliente_idCliente)
+                    (nombre, correo, `contraseña`, rol, Cliente_idCliente)
                 VALUES 
                     (:nombre, :correo, :clave, :rol, :cliente)";
         $stmt = $this->conn->prepare($sql);
@@ -66,7 +66,7 @@ public function actualizar(int $id, array $data): bool {
 }
     // ACTUALIZAR CLAVE OPCIONAL
     public function actualizarClave(int $id, string $clave): bool {
-        $sql = "UPDATE Usuario SET clave = :clave WHERE idUsuario = :id";
+        $sql = "UPDATE Usuario SET `contraseña` = :clave WHERE idUsuario = :id";
         $stmt = $this->conn->prepare($sql);
         return $stmt->execute([':id' => $id, ':clave' => $clave]);
     }

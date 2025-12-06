@@ -8,6 +8,9 @@ class PedidoControlador {
     public function listar() {
         $pedidoModel = new Pedido();
         $pedidos = $pedidoModel->obtenerTodos();
+        // cargar distribuciones para el modal/selección
+        $distribucionModel = new Distribucion();
+        $distribuciones = $distribucionModel->obtenerTodos();
         require __DIR__ . '/../views/pedido/listar.php';
     }
 

@@ -1,4 +1,9 @@
-const baseUrlProducto = typeof baseUrlProducto !== 'undefined' ? baseUrlProducto : '/AGRICOLAD_LP/controllers/ProductoControlador.php';
+// Use the inline-defined `baseUrlProducto` (in the page) when available,
+// otherwise fall back to the default path. Do NOT redeclare the same const
+// name to avoid "Identifier has already been declared" errors.
+const _baseUrlProducto = (typeof window !== 'undefined' && window.baseUrlProducto)
+  ? window.baseUrlProducto
+  : '/AGRICOLAD_LP/controllers/ProductoControlador.php';
 
 // Abrir modal y llenar datos
 document.querySelectorAll('.btn-editar-producto').forEach(btn => {
@@ -37,7 +42,7 @@ if (formEditarP) {
     const formData = new FormData(formEditarP);
     const id = formData.get('idProducto');
 
-    fetch(`${baseUrlProducto}?accion=editar&id=${id}`, {
+    fetch(`${_baseUrlProducto}?accion=editar&id=${id}`, {
       method: 'POST',
       body: formData
     }).then(() => location.reload());
@@ -50,7 +55,7 @@ document.querySelectorAll('.btn-eliminar-producto').forEach(btn => {
     if (!confirm('¿Seguro que deseas eliminar este producto?')) return;
     const id = btn.dataset.id;
 
-    fetch(`${baseUrlProducto}?accion=eliminar&id=${id}`)
+    fetch(`${_baseUrlProducto}?accion=eliminar&id=${id}`)
       .then(() => location.reload());
   });
 });

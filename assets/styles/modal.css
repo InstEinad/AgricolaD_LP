@@ -32,25 +32,29 @@
   font-size: 20px;
 }
 
-/* Formulario en columna */
-#formEditarCliente {
+/* Formulario en columna para cualquier modal */
+.modal-content form {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-#formEditarCliente label {
+.modal-content form label {
   font-weight: bold;
 }
 
-#formEditarCliente input[type="text"],
-#formEditarCliente input[type="email"] {
+.modal-content form input[type="text"],
+.modal-content form input[type="email"],
+.modal-content form input[type="number"],
+.modal-content form input[type="date"],
+.modal-content form select, 
+.modal-content form textarea {
   width: 100%;
   padding: 6px 8px;
   box-sizing: border-box;
 }
 
-#formEditarCliente button {
+.modal-content form button {
   margin-top: 10px;
   padding: 8px 10px;
   cursor: pointer;

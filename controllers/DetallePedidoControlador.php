@@ -9,6 +9,11 @@ class DetallePedidoControlador {
     public function listar() {
         $detalleModel = new DetallePedido();
         $detalles = $detalleModel->obtenerTodos();
+        // para poblar selects en el modal de edición
+        $productoModel = new Producto();
+        $pedidoModel = new Pedido();
+        $productos = $productoModel->obtenerTodos();
+        $pedidos = $pedidoModel->obtenerTodos();
         require __DIR__ . '/../views/detallepedido/listar.php';
     }
 

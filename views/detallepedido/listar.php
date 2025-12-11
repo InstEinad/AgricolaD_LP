@@ -1,5 +1,8 @@
 <?php
+<<<<<<< Updated upstream
 // Ruta ABSOLUTA al controlador de DetallePedido
+=======
+>>>>>>> Stashed changes
 $baseUrlDetalle = '/AGRICOLAD_LP/controllers/DetallePedidoControlador.php';
 ?>
 <!DOCTYPE html>

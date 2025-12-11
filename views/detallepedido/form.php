@@ -1,4 +1,5 @@
 <?php
+<<<<<<< Updated upstream
 $detalle = $detalle ?? null;
 // Ruta ABSOLUTA al controlador de DetallePedido
 $baseUrlDetalle = '/AGRICOLAD_LP/controllers/DetallePedidoControlador.php';
@@ -8,6 +9,23 @@ if (!isset($productos) || !isset($pedidos)) {
     header('Location: ' . $baseUrlDetalle . '?accion=crear');
     exit;
 }
+=======
+$baseUrlDetalle = '/AGRICOLAD_LP/controllers/DetallePedidoControlador.php';
+// Si se abre la vista directamente (no via controlador), redirigir al controlador
+if (realpath($_SERVER['SCRIPT_FILENAME']) === realpath(__FILE__)) {
+    header('Location: ' . $baseUrlDetalle . '?accion=crear');
+    exit;
+}
+if (!isset($detalle) || !is_array($detalle)) {
+    $detalle = [];
+}
+if (!isset($productos) || !is_array($productos)) {
+    $productos = [];
+}
+if (!isset($pedidos) || !is_array($pedidos)) {
+    $pedidos = [];
+}
+>>>>>>> Stashed changes
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -29,10 +47,14 @@ if (!isset($productos) || !isset($pedidos)) {
     $idPedido        = $detalle['Pedido_idPedido']     ?? '';
     ?>
 
+<<<<<<< Updated upstream
     <form method="post" action="<?= $baseUrlDetalle ?>?accion=<?= $detalle ? 'editar&id='.$idDetallePedido : 'crear' ?>">
         
         <label>Cantidad:</label><br>
         <input type="number" name="cantidad" min="1" value="<?= htmlspecialchars($cantidad) ?>" required><br><br>
+=======
+    <form method="post" action="<?= $baseUrlDetalle ?>?accion=<?= $idDetallePedido ? 'editar' : 'crear' ?><?= $idDetallePedido ? '&id='.$idDetallePedido : '' ?>">
+>>>>>>> Stashed changes
 
         <label>Precio Unitario:</label><br>
         <input type="number" step="0.01" name="precioUnitario" value="<?= htmlspecialchars($precioUnitario) ?>" required><br><br>

@@ -1,7 +1,18 @@
 <?php
+<<<<<<< Updated upstream
 $distribucion = $distribucion ?? null;
 // Ruta ABSOLUTA al controlador de Distribución
 $baseUrlDistribucion = '/AGRICOLAD_LP/controllers/DistribucionControlador.php';
+=======
+$baseUrlDistribucion = '/AGRICOLAD_LP/controllers/DistribucionControlador.php';
+if (realpath($_SERVER['SCRIPT_FILENAME']) === realpath(__FILE__)) {
+    header('Location: ' . $baseUrlDistribucion . '?accion=crear');
+    exit;
+}
+if (!isset($distribucion) || !is_array($distribucion)) {
+    $distribucion = [];
+}
+>>>>>>> Stashed changes
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -24,8 +35,12 @@ $baseUrlDistribucion = '/AGRICOLAD_LP/controllers/DistribucionControlador.php';
 
     <form method="post" action="<?= $baseUrlDistribucion ?>?accion=<?= $distribucion ? 'editar&id='.$idDistribucion : 'crear' ?>">
 
+<<<<<<< Updated upstream
         <label>Fecha de Salida:</label><br>
         <input type="date" name="fechaSalida" value="<?= htmlspecialchars($fechaSalida) ?>" required><br><br>
+=======
+<form method="post" action="<?= $baseUrlDistribucion ?>?accion=<?= $idDistribucion ? 'editar' : 'crear' ?><?= $idDistribucion ? '&id='.$idDistribucion : '' ?>">
+>>>>>>> Stashed changes
 
         <label>Fecha de Entrega:</label><br>
         <input type="date" name="fechaEntrega" value="<?= htmlspecialchars($fechaEntrega) ?>" required><br><br>

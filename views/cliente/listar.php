@@ -1,6 +1,10 @@
 <?php
+<<<<<<< Updated upstream
 // Ruta ABSOLUTA al controlador de Cliente
 $baseUrlCliente = '/agri/AgricolaD_LP/controllers/ClienteControlador.php';
+=======
+$baseUrlCliente = '/AGRICOLAD_LP/controllers/ClienteControlador.php';
+>>>>>>> Stashed changes
 ?>
 <!DOCTYPE html>
 <html lang="es">

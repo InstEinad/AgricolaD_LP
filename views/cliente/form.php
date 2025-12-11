@@ -1,7 +1,18 @@
 <?php
+<<<<<<< Updated upstream
 $cliente = $cliente ?? null;
 // Ruta ABSOLUTA al controlador de Cliente
 $baseUrlCliente = '/AGRICOLAD_LP/controllers/ClienteControlador.php';
+=======
+$baseUrlCliente = '/AGRICOLAD_LP/controllers/ClienteControlador.php';
+if (realpath($_SERVER['SCRIPT_FILENAME']) === realpath(__FILE__)) {
+    header('Location: ' . $baseUrlCliente . '?accion=crear');
+    exit;
+}
+if (!isset($cliente) || !is_array($cliente)) {
+    $cliente = [];
+}
+>>>>>>> Stashed changes
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -24,7 +35,11 @@ $baseUrlCliente = '/AGRICOLAD_LP/controllers/ClienteControlador.php';
     $correo     = $cliente['correo']    ?? '';
     ?>
 
+<<<<<<< Updated upstream
     <form method="post" action="<?= $baseUrlCliente ?>?accion=<?= $cliente ? 'editar&id='.$idCliente : 'crear' ?>">
+=======
+    <form method="post" action="<?= $baseUrlCliente ?>?accion=<?= $idCliente ? 'editar' : 'crear' ?><?= $idCliente ? '&id='.$idCliente : '' ?>">
+>>>>>>> Stashed changes
 
         <label>Nombre:</label><br>
         <input type="text" name="nombre" value="<?= htmlspecialchars($nombre) ?>" required><br><br>

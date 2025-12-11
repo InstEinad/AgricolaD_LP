@@ -1,5 +1,8 @@
 <?php
+<<<<<<< Updated upstream
 // Ruta ABSOLUTA al controlador de Distribución
+=======
+>>>>>>> Stashed changes
 $baseUrlDistribucion = '/AGRICOLAD_LP/controllers/DistribucionControlador.php';
 ?>
 <!DOCTYPE html>

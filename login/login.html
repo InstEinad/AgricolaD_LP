@@ -1,10 +1,128 @@
-<form action="login.php" method="POST">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio de Sesión</title>
 
-    <label for="correo">EMAIL: </label>
-    <input type="email" id="correo" name="correo" required><br><br>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
 
-    <label for="clave">CLAVE: </label>
-    <input type="password" id="clave" name="clave" required><br><br>
+            background: url('../imagenes/agr.jpg') no-repeat center center fixed;
+            background-size: cover;
 
-    <button type="submit">INGRESAR</button>
-</form>
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .contenedor {
+            width: 360px;
+            background: rgba(240, 255, 244, 0.92);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+
+            animation: flotar 6s ease-in-out infinite;
+            backdrop-filter: blur(3px);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @keyframes flotar {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+            100% { transform: translateY(0px); }
+        }
+
+        h2 {
+            margin: 0 0 20px 0;
+            color: #1a5d48;
+            text-align: center;
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            width: 100%;
+            text-align: left;
+            font-weight: bold;
+            margin-top: 12px;
+            color: #2d6f54;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 5px;
+            border: solid 1px #9cd1b4;
+            outline: none;
+            text-align: center;
+        }
+
+        input:focus {
+            border-color: #4caf7b;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 18px;
+            border: none;
+            border-radius: 6px;
+            background: #4caf7b;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3c8e64;
+        }
+
+        .boton-secundario {
+            background: #7da68e;
+        }
+
+        .boton-secundario:hover {
+            background: #648b75;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <h2>INICIO DE SESIÓN</h2>
+
+    <form action="login.php" method="POST">
+
+        <label for="correo">EMAIL:</label>
+        <input type="email" id="correo" name="correo" required>
+
+        <label for="clave">CLAVE:</label>
+        <input type="password" id="clave" name="clave" required>
+
+        <button type="submit">INGRESAR</button>
+    </form>
+
+    <form action="../registrar/registro.php" method="GET">
+        <button type="submit" class="boton-secundario">REGISTRARME</button>
+    </form>
+
+</div>
+
+</body>
+</html>

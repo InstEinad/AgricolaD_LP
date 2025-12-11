@@ -234,6 +234,8 @@
 
         <h1><?= $pedido ? 'Editar' : 'Nuevo' ?> Pedido</h1>
 
+        <?php if (!isset($pedido) || !is_array($pedido)) { $pedido = []; } ?>
+
         <?php
         $idPedido        = $pedido['idPedido'] ?? '';
         $fechaPedido     = $pedido['fechaPedido'] ?? date('Y-m-d');
@@ -243,7 +245,7 @@
         $idDistribucion  = $pedido['Distribucion_idDistribucion'] ?? '';
         ?>
 
-        <form method="post">
+        <form method="post" action="<?= $baseUrlPedido ?>?accion=<?= $idPedido ? 'editar&id=' . $idPedido : 'crear' ?>">
 
             <label>Fecha de Pedido:</label>
             <input type="date" name="fechaPedido" value="<?= htmlspecialchars($fechaPedido) ?>" required>

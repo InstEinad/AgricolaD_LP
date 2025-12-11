@@ -1,5 +1,5 @@
 <?php
-$baseUrlDetalle = '/agri/AgricolaD_LP/controllers/DetallePedidoControlador.php';
+$baseUrlDetalle = '/AGRICOLAD_LP/controllers/DetallePedidoControlador.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -84,64 +84,64 @@ $baseUrlDetalle = '/agri/AgricolaD_LP/controllers/DetallePedidoControlador.php';
         <li>
             <a href="#">Clientes</a>
             <ul class="submenu">
-                <li><a href="http://localhost/agri/AgricolaD_LP/controllers/ClienteControlador.php?accion=listar">Listar</a></li>
-                <li><a href="http://localhost/agri/AgricolaD_LP/controllers/ClienteControlador.php?accion=crear">Agregar</a></li>
+                <li><a href="http://localhost/AGRICOLAD_LP/controllers/ClienteControlador.php?accion=listar">Listar</a></li>
+                <li><a href="http://localhost/AGRICOLAD_LP/controllers/ClienteControlador.php?accion=crear">Agregar</a></li>
             </ul>
         </li>
 
         <li>
             <a href="#">Detalles de Pedido</a>
             <ul class="submenu">
-                <li><a href="http://localhost/agri/AgricolaD_LP/controllers/DetallePedidoControlador.php?accion=listar">Listar</a></li>
-                <li><a href="http://localhost/agri/AgricolaD_LP/controllers/DetallePedidoControlador.php?accion=crear">Agregar</a></li>
+                <li><a href="http://localhost/AGRICOLAD_LP/controllers/DetallePedidoControlador.php?accion=listar">Listar</a></li>
+                <li><a href="http://localhost/AGRICOLAD_LP/controllers/DetallePedidoControlador.php?accion=crear">Agregar</a></li>
             </ul>
         </li>
 
         <li>
             <a href="#">Distribución</a>
             <ul class="submenu">
-                <li><a href="http://localhost/agri/AgricolaD_LP/controllers/DistribucionControlador.php?accion=listar">Listar</a></li>
-                <li><a href="http://localhost/agri/AgricolaD_LP/controllers/DistribucionControlador.php?accion=crear">Agregar</a></li>
+                <li><a href="http://localhost/AGRICOLAD_LP/controllers/DistribucionControlador.php?accion=listar">Listar</a></li>
+                <li><a href="http://localhost/AGRICOLAD_LP/controllers/DistribucionControlador.php?accion=crear">Agregar</a></li>
             </ul>
         </li>
 
         <li>
             <a href="#">Notificaciones</a>
             <ul class="submenu">
-                <li><a href="http://localhost/agri/AgricolaD_LP/controllers/NotificacionControlador.php?accion=listar">Listar</a></li>
-                <li><a href="http://localhost/agri/AgricolaD_LP/controllers/NotificacionControlador.php?accion=crear">Agregar</a></li>
+                <li><a href="http://localhost/AGRICOLAD_LP/controllers/NotificacionControlador.php?accion=listar">Listar</a></li>
+                <li><a href="http://localhost/AGRICOLAD_LP/controllers/NotificacionControlador.php?accion=crear">Agregar</a></li>
             </ul>
         </li>
 
         <li>
             <a href="#">Pedido</a>
             <ul class="submenu">
-                <li><a href="http://localhost/agri/AgricolaD_LP/controllers/PedidoControlador.php?accion=listar">Listar</a></li>
-                <li><a href="http://localhost/agri/AgricolaD_LP/controllers/PedidoControlador.php?accion=crear">Agregar</a></li>
+                <li><a href="http://localhost/AGRICOLAD_LP/controllers/PedidoControlador.php?accion=listar">Listar</a></li>
+                <li><a href="http://localhost/AGRICOLAD_LP/controllers/PedidoControlador.php?accion=crear">Agregar</a></li>
             </ul>
         </li>
 
         <li>
             <a href="#">Producto</a>
             <ul class="submenu">
-                <li><a href="http://localhost/agri/AgricolaD_LP/controllers/ProductoControlador.php?accion=listar">Listar</a></li>
-                <li><a href="http://localhost/agri/AgricolaD_LP/controllers/ProductoControlador.php?accion=crear">Agregar</a></li>
+                <li><a href="http://localhost/AGRICOLAD_LP/controllers/ProductoControlador.php?accion=listar">Listar</a></li>
+                <li><a href="http://localhost/AGRICOLAD_LP/controllers/ProductoControlador.php?accion=crear">Agregar</a></li>
             </ul>
         </li>
 
         <li>
             <a href="#">Reporte</a>
             <ul class="submenu">
-                <li><a href="http://localhost/agri/AgricolaD_LP/controllers/ReporteControlador.php?accion=listar">Listar</a></li>
-                <li><a href="http://localhost/agri/AgricolaD_LP/controllers/ReporteControlador.php?accion=crear">Agregar</a></li>
+                <li><a href="http://localhost/AGRICOLAD_LP/controllers/ReporteControlador.php?accion=listar">Listar</a></li>
+                <li><a href="http://localhost/AGRICOLAD_LP/controllers/ReporteControlador.php?accion=crear">Agregar</a></li>
             </ul>
         </li>
 
         <li>
             <a href="#">Usuario</a>
             <ul class="submenu">
-                <li><a href="http://localhost/agri/AgricolaD_LP/controllers/UsuarioControlador.php?accion=listar">Listar</a></li>
-                <li><a href="http://localhost/agri/AgricolaD_LP/controllers/UsuarioControlador.php?accion=crear">Agregar</a></li>
+                <li><a href="http://localhost/AGRICOLAD_LP/controllers/UsuarioControlador.php?accion=listar">Listar</a></li>
+                <li><a href="http://localhost/AGRICOLAD_LP/controllers/UsuarioControlador.php?accion=crear">Agregar</a></li>
             </ul>
         </li>
 

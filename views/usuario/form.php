@@ -229,6 +229,8 @@ $baseUrlUsuario = '/agri/AgricolaD_LP/controllers/UsuarioControlador.php';
 </head>
 <body>
 
+<?php if (!isset($usuario) || !is_array($usuario)) { $usuario = []; } ?>
+
 <div class="contenedor">
 
 <h1><?= $usuario ? 'Editar Usuario' : 'Nuevo Usuario' ?></h1>
@@ -241,7 +243,7 @@ $rol         = $usuario['rol']             ?? '';
 $idCliente   = $usuario['Cliente_idCliente'] ?? '';
 ?>
 
-<form method="post">
+<form method="post" action="<?= $baseUrlUsuario ?>?accion=<?= $idUsuario ? 'editar&id=' . $idUsuario : 'crear' ?>">
 
     <label>Nombre:</label>
     <input type="text" name="nombre" value="<?= htmlspecialchars($nombre) ?>" required>

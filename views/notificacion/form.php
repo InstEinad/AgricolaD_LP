@@ -231,6 +231,8 @@ a:hover {
 <div class="centrar-form">
 <div class="contenedor">
 
+    <?php if (!isset($notificacion) || !is_array($notificacion)) { $notificacion = []; } ?>
+
     <h1><?= $notificacion ? 'Editar' : 'Nueva' ?> Notificación</h1>
 
     <?php
@@ -242,7 +244,7 @@ a:hover {
         $idPedido       = $notificacion['Pedido_idPedido']   ?? '';
     ?>
 
-    <form method="post">
+    <form method="post" action="<?= $baseUrlNotif ?>?accion=<?= $idNotificacion ? 'editar&id=' . $idNotificacion : 'crear' ?>">
 
         <label>Tipo de Notificación:</label>
         <input type="text" name="tipo" value="<?= htmlspecialchars($tipo) ?>" required>

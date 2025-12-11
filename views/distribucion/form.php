@@ -223,6 +223,8 @@ $baseUrlDistribucion = '/agri/AgricolaD_LP/controllers/DistribucionControlador.p
 </head>
 <body>
 
+<?php if (!isset($distribucion) || !is_array($distribucion)) { $distribucion = []; } ?>
+
 <h1><?= $distribucion ? 'Editar' : 'Nueva' ?> Distribución</h1>
 
 <?php
@@ -233,7 +235,7 @@ $rutaAsignada   = $distribucion['rutaAsignada']   ?? '';
 $transportista  = $distribucion['transportista']  ?? '';
 ?>
 
-<form method="post">
+<form method="post" action="<?= $baseUrlDistribucion ?>?accion=<?= $idDistribucion ? 'editar&id=' . $idDistribucion : 'crear' ?>">
 
     <label>Fecha de Salida:</label>
     <input type="date" name="fechaSalida" value="<?= htmlspecialchars($fechaSalida) ?>" required>

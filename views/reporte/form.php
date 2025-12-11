@@ -228,6 +228,8 @@ $baseUrlReporte = '/agri/AgricolaD_LP/controllers/ReporteControlador.php';
 </head>
 <body>
 
+<?php if (!isset($reporte) || !is_array($reporte)) { $reporte = []; } ?>
+
 <div class="contenedor">
 
 <h1><?= $reporte ? 'Editar Reporte' : 'Nuevo Reporte' ?></h1>
@@ -240,7 +242,7 @@ $rango       = $reporte['rangoFecha']      ?? '';
 $idUsuario   = $reporte['Usuario_idUsuario'] ?? '';
 ?>
 
-<form method="post">
+<form method="post" action="<?= $baseUrlReporte ?>?accion=<?= $idReporte ? 'editar&id=' . $idReporte : 'crear' ?>">
 
     <label>Tipo de Reporte:</label>
     <input type="text" name="tipoReporte" value="<?= htmlspecialchars($tipo) ?>" required>

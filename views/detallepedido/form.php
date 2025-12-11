@@ -231,6 +231,8 @@ $baseUrlDetalle = '/agri/AgricolaD_LP/controllers/DetallePedidoControlador.php';
 
 <div class="contenedor">
 
+    <?php if (!isset($detalle) || !is_array($detalle)) { $detalle = []; } ?>
+
     <h1><?= $detalle ? 'Editar' : 'Nuevo' ?> Detalle de Pedido</h1>
 
     <?php
@@ -242,7 +244,7 @@ $baseUrlDetalle = '/agri/AgricolaD_LP/controllers/DetallePedidoControlador.php';
     $idPedido        = $detalle['Pedido_idPedido']     ?? '';
     ?>
 
-    <form method="post">
+    <form method="post" action="<?= $baseUrlDetalle ?>?accion=<?= $idDetallePedido ? 'editar&id=' . $idDetallePedido : 'crear' ?>">
 
         <label>Cantidad</label>
         <input type="number" name="cantidad" min="1" value="<?= htmlspecialchars($cantidad) ?>" required>

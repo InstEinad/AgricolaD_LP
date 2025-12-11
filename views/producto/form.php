@@ -238,8 +238,10 @@ $fechaRegistro      = $producto['fechaRegistro']     ?? date('Y-m-d');
 $estado             = $producto['estado']            ?? 'Disponible';
 ?>
 
+<?php if (!isset($producto) || !is_array($producto)) { $producto = []; } ?>
+
 <div class="form-container">
-    <form method="post">
+    <form method="post" action="<?= $baseUrl ?>?accion=<?= $idProducto ? 'editar&id=' . $idProducto : 'crear' ?>">
 
         <label>Nombre:</label>
         <input type="text" name="nombre" value="<?= htmlspecialchars($nombre) ?>" required><br><br>
